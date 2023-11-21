@@ -1,6 +1,5 @@
-import { Message } from "discord.js";
 import { PrismaClient } from "@prisma/client";
-export default async function getMode(msg: Message<boolean>) {
+export default async function getMode(msg) {
   const prisma = new PrismaClient();
 
   try {

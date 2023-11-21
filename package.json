@@ -5,17 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "dev": "node dist/index.js",
+    "command": "node commands.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.6.0",
+    "@types/node": "^20.9.3",
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1",
-    "prisma": "^5.6.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "prisma": "^5.6.0"
   }
 }
