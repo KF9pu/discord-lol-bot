@@ -1,12 +1,6 @@
 import { REST, Routes } from "discord.js";
 import "dotenv/config";
-
-const commands = [
-  {
-    name: "ping",
-    description: "Replies with Pong!",
-  },
-];
+import commands from "./constants/commands.js";
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 console.log(

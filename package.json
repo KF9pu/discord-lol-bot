@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node dist/index.js",
-    "command": "node commands.js"
+    "dev": "node index.js",
+    "command": "node setCommands.js"
   },
   "keywords": [],
   "author": "",
