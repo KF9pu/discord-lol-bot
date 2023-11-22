@@ -7,3 +7,12 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model user {
+  user_id         BigInt     @id @unique
+  guild_id        BigInt
+  victories       Int     @default(0)
+  defeats         Int     @default(0)
+  last_game_date  Int
+}
+
