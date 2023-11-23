@@ -8,4 +8,5 @@ export { default as halfMirrorMode } from "./gameMode/halfMirrorMode.js";
 export { default as mirrorMode } from "./gameMode/mirrorMode.js";
 export { default as nomalMode } from "./gameMode/nomalMode.js";
 export { default as showAllModes } from "./gameMode/showAllModes.js";
+export { default as randomSpellMode } from "./gameMode/randomSpellMode.js";
 export { default as twoRandomChampionsMode } from "./gameMode/twoRandomChampionsMode.js";

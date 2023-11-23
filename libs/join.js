@@ -1,5 +1,6 @@
 import { CommandInteraction } from "discord.js";
 import { PrismaClient } from "@prisma/client";
+import { unixNow } from "hsh-utils-date";
 
 /**
  * @param {CommandInteraction} interaction
@@ -17,7 +18,7 @@ export default async function join(interaction) {
 
     await checkFirstJoin(prisma, user_id, guild_id);
 
-    await joinGame();
+    await joinGame(prisma, user_id, guild_id);
 
     interaction.reply("💚 게임 참여 완료!");
   } catch (error) {
@@ -45,7 +46,7 @@ async function checkFirstJoin(prisma, user_id, guild_id) {
         guild_id,
         victories: 0,
         defeats: 0,
-        last_game_date: 0,
+        last_game_date: unixNow(),
       },
     });
     console.log("🧡 : 내전 첫 참가로 유저 테이블 생성");
@@ -54,4 +55,9 @@ async function checkFirstJoin(prisma, user_id, guild_id) {
   }
 }
 
-async function joinGame() {}
+/**
+ * @param {PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>} prisma
+ * @param {number} user_id
+ * @param {number} guild_id
+ */
+async function joinGame(prisma, user_id, guild_id) {}

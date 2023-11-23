@@ -8,11 +8,46 @@ generator client {
   provider = "prisma-client-js"
 }
 
+
 model user {
-  user_id         BigInt     @id @unique
-  guild_id        BigInt
-  victories       Int     @default(0)
-  defeats         Int     @default(0)
-  last_game_date  Int
+  user_id    BigInt
+  guild_id   BigInt
+  user_name  String
+  create_dt  BigInt
+  players    player[]
+  gameLogs   gameLog[]
+  commandLogs commandLog[]
+
+  @@id([user_id, guild_id])
+
 }
 
+model player {
+  player_id  Int      @id @default(autoincrement())
+  user_id    BigInt
+  guild_id   BigInt
+  team       Int      @default(0)
+  join_dt    BigInt
+  user       user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
+  @@index([user_id, guild_id])
+}
+
+model gameLog {
+  gameLog_id Int      @id @default(autoincrement())
+  user_id    BigInt
+  guild_id   BigInt
+  result     Int
+  game_dt    BigInt
+  user       user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
+  @@index([user_id, guild_id])
+}
+
+model commandLog {
+  commandLog_id Int      @id @default(autoincrement())
+  user_id       BigInt
+  guild_id      BigInt
+  command_name  String
+  command_dt    BigInt
+  user          user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
+  @@index([user_id, guild_id])
+}

@@ -1,8 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import "dotenv/config";
 import commands from "./constants/commands.js";
-import { pattern_join } from "./constants/patterns.js";
-import { isMaches } from "./libs/index.js";
+
 /**
   datasource db {
     provider = "mysql"
@@ -27,10 +26,10 @@ client.on("interactionCreate", async interaction => {
 
   console.log("🚀 : 시작이 좋아~");
 
-  const { run } = commands.find(cmd => cmd.name === interaction.commandName);
-
   try {
-    if (isMaches(interaction.commandName, pattern_join)) run(interaction);
+    const { run } = commands.find(cmd => cmd.name === interaction.commandName);
+    // if (isMaches(interaction.commandName, pattern_join)) run(interaction);
+    run(interaction);
   } catch (error) {
     interaction.reply("💥 문제가 생겼어요!");
   }

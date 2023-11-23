@@ -9,6 +9,7 @@ import {
   showAllModes,
   twoRandomChampionsMode,
   getJoinMemberList,
+  randomSpellMode,
 } from "../libs/index.js";
 
 const commands = [
@@ -56,6 +57,12 @@ const commands = [
     description:
       "각 팀 모두 선택이 가능한 10개의 챔피언 리스트와 각 팀이 사용하는 각 10개의 챔피언 리스트로 조합을 짜는 모드",
     run: halfMirrorMode,
+  },
+  {
+    name: "랜덤스펠모드(칼바람)",
+    description:
+      "각 팀에게 랜덤한 스펠이 주어진다. 팀원 수에 맞게 스펠이 주어지며, 스펠에 맞도록 자유롭게 챔피언을 골라 게임을 진행한다.",
+    run: randomSpellMode,
   },
   {
     name: "조인",
