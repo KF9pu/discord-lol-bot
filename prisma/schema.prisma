@@ -23,12 +23,13 @@ model user {
 }
 
 model player {
-  player_id  Int      @id @default(autoincrement())
   user_id    BigInt
   guild_id   BigInt
   team       Int      @default(0)
   join_dt    BigInt
   user       user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
+  
+  @@id([user_id, guild_id])
   @@index([user_id, guild_id])
 }
 
