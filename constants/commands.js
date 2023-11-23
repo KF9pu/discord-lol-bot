@@ -10,6 +10,8 @@ import {
   twoRandomChampionsMode,
   getJoinMemberList,
   randomSpellMode,
+  getClanInfo,
+  gameEnd,
 } from "../libs/index.js";
 
 const commands = [
@@ -73,6 +75,16 @@ const commands = [
     name: "참여인원",
     description: "게임 참여인원 리스트 보기",
     run: getJoinMemberList,
+  },
+  {
+    name: "클랜정보",
+    description: "디스코드 채널을 통한 게임내역 및 플레이한 유저들의 정보 보기",
+    run: getClanInfo,
+  },
+  {
+    name: "겜종",
+    description: "자신을 player 에서 제외한다.",
+    run: gameEnd,
   },
 ];
 

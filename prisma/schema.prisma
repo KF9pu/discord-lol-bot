@@ -10,45 +10,46 @@ generator client {
 
 
 model user {
-  user_id    BigInt
-  guild_id   BigInt
-  user_name  String
-  create_dt  BigInt
-  players    player[]
-  gameLogs   gameLog[]
+  user_id     BigInt
+  clan_id     BigInt
+  user_name   String
+  create_dt   BigInt
+  players     player[]
+  gameLogs    gameLog[]
   commandLogs commandLog[]
 
-  @@id([user_id, guild_id])
+  @@id([user_id, clan_id])
 
 }
 
 model player {
-  user_id    BigInt
-  guild_id   BigInt
-  team       Int      @default(0)
-  join_dt    BigInt
-  user       user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
+  user_id     BigInt
+  clan_id     BigInt
+  user_name   String
+  team        Int      @default(0)
+  join_dt     BigInt
+  user        user     @relation(fields: [user_id, clan_id], references: [user_id, clan_id])
   
-  @@id([user_id, guild_id])
-  @@index([user_id, guild_id])
+  @@id([user_id, clan_id])
+  @@index([user_id, clan_id])
 }
 
 model gameLog {
-  gameLog_id Int      @id @default(autoincrement())
-  user_id    BigInt
-  guild_id   BigInt
-  result     Int
-  game_dt    BigInt
-  user       user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
-  @@index([user_id, guild_id])
+  gameLog_id  Int      @id @default(autoincrement())
+  user_id     BigInt
+  clan_id     BigInt
+  result      Int
+  game_dt     BigInt
+  user        user     @relation(fields: [user_id, clan_id], references: [user_id, clan_id])
+  @@index([user_id, clan_id])
 }
 
 model commandLog {
   commandLog_id Int      @id @default(autoincrement())
   user_id       BigInt
-  guild_id      BigInt
+  clan_id       BigInt
   command_name  String
   command_dt    BigInt
-  user          user     @relation(fields: [user_id, guild_id], references: [user_id, guild_id])
-  @@index([user_id, guild_id])
+  user          user     @relation(fields: [user_id, clan_id], references: [user_id, clan_id])
+  @@index([user_id, clan_id])
 }

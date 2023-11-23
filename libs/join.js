@@ -1,13 +1,11 @@
 import { CommandInteraction } from "discord.js";
 import { PrismaClient } from "@prisma/client";
-import { unixNow, unixTodayStart, unixTomorrowStart } from "hsh-utils-date";
+import { unixNow } from "hsh-utils-date";
 
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function join(interaction) {
-  console.log("🚀 : join 시작");
-
   const prisma = new PrismaClient();
 
   try {
@@ -15,12 +13,11 @@ export default async function join(interaction) {
 
     const user_id = parseInt(interaction.user.id);
     const user_nickname = interaction.user.globalName;
-    const guild_id = parseInt(interaction.guildId);
+    const clan_id = parseInt(interaction.guildId);
 
-    await joinGame(prisma, user_id, guild_id, user_nickname)
+    await joinGame(prisma, user_id, clan_id, user_nickname)
       .then(() => interaction.reply("💚 게임 참여 완료!"))
       .catch(() => interaction.reply("🧡 게임 참여 실패!"));
-    // interaction.reply("💚 게임 참여 완료!");
   } catch (error) {
     console.log("❌ join catch ❌", error);
     interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");
@@ -32,17 +29,17 @@ export default async function join(interaction) {
 /**
  * @param {PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>} prisma
  * @param {number} user_id
- * @param {number} guild_id
+ * @param {number} clan_id
  * @param {string} user_nickname
  */
-async function joinGame(prisma, user_id, guild_id, user_nickname) {
+async function joinGame(prisma, user_id, clan_id, user_nickname) {
   try {
     await prisma.$transaction([
       prisma.user.upsert({
         where: {
-          user_id_guild_id: {
+          user_id_clan_id: {
             user_id,
-            guild_id,
+            clan_id,
           },
         },
         update: {
@@ -50,16 +47,16 @@ async function joinGame(prisma, user_id, guild_id, user_nickname) {
         },
         create: {
           user_id,
-          guild_id,
+          clan_id,
           user_name: user_nickname,
           create_dt: unixNow(),
         },
       }),
       prisma.player.upsert({
         where: {
-          user_id_guild_id: {
+          user_id_clan_id: {
             user_id,
-            guild_id,
+            clan_id,
           },
         },
         update: {
@@ -67,7 +64,8 @@ async function joinGame(prisma, user_id, guild_id, user_nickname) {
         },
         create: {
           user_id,
-          guild_id,
+          clan_id,
+          user_name: user_nickname,
           team: 0,
           join_dt: unixNow(),
         },

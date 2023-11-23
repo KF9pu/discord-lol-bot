@@ -2,12 +2,6 @@ import { Client, GatewayIntentBits } from "discord.js";
 import "dotenv/config";
 import commands from "./constants/commands.js";
 
-/**
-  datasource db {
-    provider = "mysql"
-    url = "mysql://7eylbtvhvwkebzs0m2bq:pscale_pw_HdPImxIW3fP3T1jcQZewfWjBWUNj897LGUJBzSioXUX@gcp.connect.psdb.cloud/myapp?sslaccept=strict"
-  }
- */
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -28,7 +22,6 @@ client.on("interactionCreate", async interaction => {
 
   try {
     const { run } = commands.find(cmd => cmd.name === interaction.commandName);
-    // if (isMaches(interaction.commandName, pattern_join)) run(interaction);
     run(interaction);
   } catch (error) {
     interaction.reply("💥 문제가 생겼어요!");

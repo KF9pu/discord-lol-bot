@@ -1,4 +1,3 @@
-export { default as isMaches } from "./isMaches.js";
 export { default as ready } from "./ready.js";
 export { default as divideTeams } from "./divideTeams.js";
 export { default as pickRandomMode } from "./pickRandomMode.js";
@@ -10,3 +9,5 @@ export { default as nomalMode } from "./gameMode/nomalMode.js";
 export { default as showAllModes } from "./gameMode/showAllModes.js";
 export { default as randomSpellMode } from "./gameMode/randomSpellMode.js";
 export { default as twoRandomChampionsMode } from "./gameMode/twoRandomChampionsMode.js";
+export { default as getClanInfo } from "./getClanInfo.js";
+export { default as gameEnd } from "./gameEnd.js";
