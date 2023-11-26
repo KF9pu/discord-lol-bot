@@ -26,7 +26,7 @@ const commands = [
     run: divideTeams,
   },
   {
-    name: "모든모드",
+    name: "모드보기",
     description: "현재 사용이 가능한 모든 모드 목록 보기",
     run: showAllModes,
   },
