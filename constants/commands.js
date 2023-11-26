@@ -11,7 +11,7 @@ import {
   getJoinMemberList,
   randomSpellMode,
   getClanInfo,
-  gameEnd,
+  resetPlayer,
 } from "../libs/index.js";
 
 const commands = [
@@ -61,7 +61,7 @@ const commands = [
     run: halfMirrorMode,
   },
   {
-    name: "랜덤스펠모드(칼바람)",
+    name: "랜덤스펠모드",
     description:
       "각 팀에게 랜덤한 스펠이 주어진다. 팀원 수에 맞게 스펠이 주어지며, 스펠에 맞도록 자유롭게 챔피언을 골라 게임을 진행한다.",
     run: randomSpellMode,
@@ -82,9 +82,9 @@ const commands = [
     run: getClanInfo,
   },
   {
-    name: "겜종",
-    description: "자신을 player 에서 제외한다.",
-    run: gameEnd,
+    name: "플레이어초기화",
+    description: "해당 클랜의 player 테이블 데이터를 초기화한다.",
+    run: resetPlayer,
   },
 ];
 

@@ -10,4 +10,4 @@ export { default as showAllModes } from "./gameMode/showAllModes.js";
 export { default as randomSpellMode } from "./gameMode/randomSpellMode.js";
 export { default as twoRandomChampionsMode } from "./gameMode/twoRandomChampionsMode.js";
 export { default as getClanInfo } from "./getClanInfo.js";
-export { default as gameEnd } from "./gameEnd.js";
+export { default as resetPlayer } from "./resetPlayer.js";

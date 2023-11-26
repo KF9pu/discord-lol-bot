@@ -22,7 +22,11 @@ export default async function getJoinMemberList(interaction) {
         `${idx + 1}. ${user_name} [${teamStatus(team)}]`
     );
 
-    interaction.reply("🎈 참여중인 인원 \n" + playerNames.join("\n"));
+    interaction.reply(
+      playerNames.length === 0
+        ? "💡 참여중인 인원이 없어요"
+        : "🎈 참여중인 인원 \n" + playerNames.join("\n")
+    );
   } catch (error) {
     interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");
   } finally {
