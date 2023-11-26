@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 import { CommandInteraction } from "discord.js";
 import { unixTodayStart, unixTomorrowStart } from "hsh-utils-date";
 import setCommandLog from "./setCommandLog.js";
+import startConsole from "../common/consoles/startConsole.js";
+import catchConsole from "../common/consoles/catchConsole.js";
 
 /**
  * @param {CommandInteraction} interaction
@@ -10,7 +12,7 @@ export default async function divideTeams(interaction) {
   const prisma = new PrismaClient();
 
   try {
-    console.log("🚀🚀🚀🚀 divideTeams start 🚀🚀🚀🚀");
+    startConsole("divideTeams");
     const user_id = parseInt(interaction.user.id);
     const clan_id = parseInt(interaction.guildId);
 
@@ -63,7 +65,7 @@ export default async function divideTeams(interaction) {
       })
       .then(() => setCommandLog(prisma, user_id, clan_id, "divideTeams"));
   } catch (error) {
-    interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");
+    catchConsole("divideTeams", interaction, error);
   } finally {
     await prisma.$disconnect();
   }
