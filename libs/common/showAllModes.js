@@ -9,6 +9,7 @@ export default async function showAllModes(interaction) {
 
   try {
     console.log("🚀🚀🚀🚀 showAllModes start 🚀🚀🚀🚀");
+
     await interaction.reply("showAllModes");
   } catch (error) {
     console.log("❌ showAllModes catch ❌", error);
