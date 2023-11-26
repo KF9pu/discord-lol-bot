@@ -21,7 +21,7 @@ export default async function setCommandLog(
       .create({
         data: { clan_id, user_id, command_name, command_dt: unixNow() },
       })
-      .then(() => console.log("💚 commandLog 생성 완료"));
+      .then(() => console.log(`💚 [${command_name}] commandLog 생성 완료`));
   } catch (error) {
     console.log("🖤 setCommandLog Error : ", error);
   }

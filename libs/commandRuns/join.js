@@ -13,7 +13,11 @@ export default async function join(interaction) {
 
   try {
     startConsole("join");
-    await joinGame(prisma, interaction)
+    const user_id = parseInt(interaction.user.id);
+    const clan_id = parseInt(interaction.guildId);
+    const user_nickname = interaction.user.globalName;
+
+    await joinGame(prisma, user_id, clan_id, user_nickname)
       .then(() => interaction.reply("💚 게임 참여 완료!"))
       .then(() => setCommandLog(prisma, user_id, clan_id, "join"));
   } catch (error) {
@@ -25,14 +29,12 @@ export default async function join(interaction) {
 
 /**
  * @param {PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>} prisma
- * @param {CommandInteraction} interaction
+ * @param {number} user_id
+ * @param {number} clan_id
+ * @param {string} user_nickname
  */
-async function joinGame(prisma, interaction) {
+async function joinGame(prisma, user_id, clan_id, user_nickname) {
   try {
-    const user_id = parseInt(interaction.user.id);
-    const clan_id = parseInt(interaction.guildId);
-    const user_nickname = interaction.user.globalName;
-
     await prisma.$transaction([
       prisma.user.upsert({
         where: {

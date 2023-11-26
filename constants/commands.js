@@ -34,36 +34,42 @@ const commands = [
     name: "랜덤모드",
     description: "사용가능한 모든 모드 중에서 하나 뽑기",
     run: pickRandomMode,
+    gameMode: true,
   },
   {
     name: "2랜모드",
     description:
-      "2개의 랜덤으로 선택된 챔피언을 조합에 필수오 넣어주고 나머지 조합을 짜는 모드",
+      "랜덤으로 선택된 2개의 챔피언을 조합에 필수로 넣고 나머지 3개의 챔피언을 자유롭게 선택하여 조합을 짜는 모드",
     run: twoRandomChampionsMode,
+    gameMode: true,
   },
   {
     name: "기본모드",
     description:
       "각 팀별로 15개의 중복없는 챔피언 리스트가 주어지고 주어진 챔피언 리스트로 조합을 짜는 모드",
     run: nomalMode,
+    gameMode: true,
   },
   {
     name: "미러모드",
     description:
-      "20개의 챔피언 리스트가 주어지면 양 팀은 주어진 20개의 챔피언 리스트로 조합을 짜는 모드 (중복 가능)",
+      "20개의 챔피언 리스트가 주어지면 양 팀은 주어진 20개의 챔피언 리스트로 조합을 짜는 모드 (양팀 중복 가능)",
     run: mirrorMode,
+    gameMode: true,
   },
   {
     name: "하프미러모드",
     description:
       "각 팀 모두 선택이 가능한 10개의 챔피언 리스트와 각 팀이 사용하는 각 10개의 챔피언 리스트로 조합을 짜는 모드",
     run: halfMirrorMode,
+    gameMode: true,
   },
   {
     name: "랜덤스펠모드",
     description:
       "각 팀에게 랜덤한 스펠이 주어진다. 팀원 수에 맞게 스펠이 주어지며, 스펠에 맞도록 자유롭게 챔피언을 골라 게임을 진행한다.",
     run: randomSpellMode,
+    gameMode: true,
   },
   {
     name: "조인",
