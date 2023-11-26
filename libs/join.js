@@ -1,6 +1,7 @@
 import { CommandInteraction } from "discord.js";
 import { PrismaClient } from "@prisma/client";
 import { unixNow } from "hsh-utils-date";
+import setCommandLog from "./setCommandLog.js";
 
 /**
  * @param {CommandInteraction} interaction
@@ -17,6 +18,7 @@ export default async function join(interaction) {
 
     await joinGame(prisma, user_id, clan_id, user_nickname)
       .then(() => interaction.reply("💚 게임 참여 완료!"))
+      .then(() => setCommandLog(prisma, user_id, clan_id, "join"))
       .catch(() => interaction.reply("🧡 게임 참여 실패!"));
   } catch (error) {
     console.log("❌ join catch ❌", error);
