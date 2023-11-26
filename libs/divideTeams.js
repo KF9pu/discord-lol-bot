@@ -28,7 +28,7 @@ export default async function divideTeams(interaction) {
       .then(async shuffledPlayerNames => {
         if (shuffledPlayerNames.length < 2) {
           await interaction.reply(
-            `🧡 플레이어가 2명 이상 필요합니다.\n💚 참여인원 : ${shuffledPlayerNames.length}`
+            `🧡 플레이어가 2명 이상 필요합니다.\n💚 현재참여인원 : ${shuffledPlayerNames.length}`
           );
         } else {
           const excludedPlayer =
