@@ -23,7 +23,7 @@ export default async function resetPlayer(interaction) {
         },
       })
       .then(() => interaction.reply("💚 플레이어 초기화 완료!"))
-      .then(() => setCommandLog(prisma, user_id, clan_id, "join"));
+      .then(() => setCommandLog(prisma, user_id, clan_id, "resetPlayer"));
   } catch (error) {
     console.log("❌ resetPlayer catch ❌", error);
     interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");

@@ -22,8 +22,7 @@ const commands = [
   },
   {
     name: "팀짜",
-    description:
-      "첫번째로 만들어진 음성채널의 인원들을 절반으로 나누어서 1팀 / 2팀 채널로 이동",
+    description: "플레이어들을 두 팀으로 나누어 준다.",
     run: divideTeams,
   },
   {

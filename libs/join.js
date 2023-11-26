@@ -13,8 +13,8 @@ export default async function join(interaction) {
     console.log("🚀🚀🚀🚀 join start 🚀🚀🚀🚀");
 
     const user_id = parseInt(interaction.user.id);
-    const user_nickname = interaction.user.globalName;
     const clan_id = parseInt(interaction.guildId);
+    const user_nickname = interaction.user.globalName;
 
     await joinGame(prisma, user_id, clan_id, user_nickname)
       .then(() => interaction.reply("💚 게임 참여 완료!"))
