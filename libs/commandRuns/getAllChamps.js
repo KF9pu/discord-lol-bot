@@ -1,6 +1,7 @@
 import { CommandInteraction } from "discord.js";
 import startConsole from "../common/consoles/startConsole.js";
 import catchConsole from "../common/consoles/catchConsole.js";
+import allChamps from "../../constants/allChamps.js";
 
 /**
  * @param {CommandInteraction} interaction
@@ -8,8 +9,14 @@ import catchConsole from "../common/consoles/catchConsole.js";
 export default async function getAllChamps(interaction) {
   try {
     startConsole("getAllChamps");
-    const user_id = parseInt(interaction.user.id);
-    const clan_id = parseInt(interaction.guildId);
+    const allChampNames = allChamps.map(
+      ({ name }, index) => `${index + 1}. ${name}`
+    );
+    console.log(
+      "🚀 ~ file: getAllChamps.js:15 ~ getAllChamps ~ allChampNames:",
+      allChampNames
+    );
+    interaction.reply(`💚 챔피언 목록\n${allChampNames.join("\n")}`);
   } catch (error) {
     catchConsole("getAllChamps", interaction, error);
   }
