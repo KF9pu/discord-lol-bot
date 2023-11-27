@@ -11,3 +11,6 @@ export { default as randomSpellMode } from "./commandRuns/gameMode/randomSpellMo
 export { default as twoRandomChampionsMode } from "./commandRuns/gameMode/twoRandomChampionsMode.js";
 export { default as getClanInfo } from "./commandRuns/getClanInfo.js";
 export { default as resetPlayer } from "./commandRuns/resetPlayer.js";
+export { default as getAllChamps } from "./commandRuns/getAllChamps.js";
+export { default as getBanList } from "./commandRuns/getBanList.js";
+export { default as resetBanList } from "./commandRuns/resetBanList.js";
