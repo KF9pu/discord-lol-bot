@@ -1,8 +1,6 @@
-import { CommandInteraction } from "discord.js";
-
 /**
  * @param {string} interactionName
- * @param {CommandInteraction} interaction
+ * @param {*} interaction
  * @param {*} error
  */
 export default function catchConsole(interactionName, interaction, error) {
