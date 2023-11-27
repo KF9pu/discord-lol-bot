@@ -2,9 +2,9 @@ import { PrismaClient } from "@prisma/client";
 import { Message } from "discord.js";
 import { unixNow } from "hsh-utils-date";
 import { isMatch } from "hsh-utils-string";
-import startConsole from "../consoles/startConsole.js";
-import allChamps from "../../../constants/allChamps.js";
-import setCommandLog from "../../commandRuns/setCommandLog.js";
+import startConsole from "../common/consoles/startConsole.js";
+import allChamps from "../../constants/allChamps.js";
+import setCommandLog from "./setCommandLog.js";
 /**
  * @param {string} championName
  * @param {Message<boolean>} msg

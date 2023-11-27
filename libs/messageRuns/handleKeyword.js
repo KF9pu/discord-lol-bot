@@ -1,4 +1,4 @@
-import championBan from "../common/champion/championBan.js";
+import championBan from "../commandRuns/championBan.js";
 
 /**
  * @param {*} msg

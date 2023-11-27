@@ -12,6 +12,10 @@ export default async function getBanList(interaction) {
     startConsole("getBanList");
     const user_id = parseInt(interaction.user.id);
     const clan_id = parseInt(interaction.guildId);
+
+    await prisma.ban.findMany({
+      where: {},
+    });
   } catch (error) {
     catchConsole("getBanList", interaction, error);
   } finally {
