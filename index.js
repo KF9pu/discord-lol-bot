@@ -2,7 +2,7 @@ import { Client, GatewayIntentBits } from "discord.js";
 import "dotenv/config";
 import commands from "./constants/commands.js";
 import keywordsToCheck from "./constants/keywordsToCheck.js";
-import handleKeyword from "./libs/messageRuns/handleKeyword.js";
+import handleKeyword from "./libs/common/handlers/handleKeyword.js";
 
 const client = new Client({
   intents: [
