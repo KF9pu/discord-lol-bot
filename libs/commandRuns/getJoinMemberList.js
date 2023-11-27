@@ -1,9 +1,7 @@
 import { CommandInteraction } from "discord.js";
 import { PrismaClient } from "@prisma/client";
 import { unixTodayStart, unixTomorrowStart } from "hsh-utils-date";
-import setCommandLog from "./setCommandLog.js";
-import catchConsole from "../common/consoles/catchConsole.js";
-import startConsole from "../common/consoles/startConsole.js";
+import { startConsole, catchConsole, setCommandLog } from "../index.js";
 
 /**
  * @param {CommandInteraction} interaction

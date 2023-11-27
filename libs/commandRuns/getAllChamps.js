@@ -1,6 +1,5 @@
 import { CommandInteraction } from "discord.js";
-import startConsole from "../common/consoles/startConsole.js";
-import catchConsole from "../common/consoles/catchConsole.js";
+import { startConsole, catchConsole } from "../index.js";
 import allChamps from "../../constants/allChamps.js";
 
 /**

@@ -1,8 +1,6 @@
 import { CommandInteraction } from "discord.js";
 import { PrismaClient } from "@prisma/client";
-import setCommandLog from "./setCommandLog.js";
-import startConsole from "../common/consoles/startConsole.js";
-import catchConsole from "../common/consoles/catchConsole.js";
+import { startConsole, catchConsole, setCommandLog } from "../index.js";
 
 /**
  * @name 플레이어초기화
