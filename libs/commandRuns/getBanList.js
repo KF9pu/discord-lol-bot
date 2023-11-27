@@ -27,7 +27,13 @@ export default async function getBanList(interaction) {
         )
       )
       .then(banChampNames => banChampNames.join("\n"))
-      .then(banChampNames => interaction.reply(`💚 밴 목록\n${banChampNames}`))
+      .then(banChampNames =>
+        interaction.reply(
+          banChampNames.length === 0
+            ? "💛 밴 목록이 비었어요 '텅!'"
+            : `💚 밴 목록\n${banChampNames}`
+        )
+      )
       .then(() => setCommandLog(prisma, user_id, clan_id, "getBanList"));
   } catch (error) {
     catchConsole("getBanList", interaction, error);
