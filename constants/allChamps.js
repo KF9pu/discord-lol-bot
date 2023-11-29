@@ -1,6 +1,6 @@
 const allChamps = [
   {
-    name: "아트",
+    name: "아트록스",
     tags: ["Fighter", "Tank"],
   },
   {
@@ -16,7 +16,7 @@ const allChamps = [
     tags: ["Marksman", "Assassin"],
   },
   {
-    name: "알리",
+    name: "알리스타",
     tags: ["Tank", "Support"],
   },
   {
@@ -72,7 +72,7 @@ const allChamps = [
     tags: ["Fighter", "Assassin"],
   },
   {
-    name: "케틀",
+    name: "케이틀린",
     tags: ["Marksman"],
   },
   {
@@ -92,7 +92,7 @@ const allChamps = [
     tags: ["Marksman"],
   },
   {
-    name: "다리",
+    name: "다리우스",
     tags: ["Fighter", "Tank"],
   },
   {
@@ -104,7 +104,7 @@ const allChamps = [
     tags: ["Marksman"],
   },
   {
-    name: "문도",
+    name: "문도박사",
     tags: ["Fighter", "Tank"],
   },
   {
@@ -172,7 +172,7 @@ const allChamps = [
     tags: ["Mage", "Support"],
   },
   {
-    name: "일라",
+    name: "일라오이",
     tags: ["Fighter", "Tank"],
   },
   {
@@ -212,7 +212,7 @@ const allChamps = [
     tags: ["Marksman"],
   },
   {
-    name: "칼리",
+    name: "칼리스타",
     tags: ["Marksman"],
   },
   {
@@ -228,7 +228,7 @@ const allChamps = [
     tags: ["Assassin", "Mage"],
   },
   {
-    name: "카타",
+    name: "카타리나",
     tags: ["Assassin", "Mage"],
   },
   {
@@ -248,7 +248,7 @@ const allChamps = [
     tags: ["Assassin"],
   },
   {
-    name: "킨드",
+    name: "킨드레드",
     tags: ["Marksman"],
   },
   {
@@ -280,7 +280,7 @@ const allChamps = [
     tags: ["Fighter", "Mage"],
   },
   {
-    name: "리산",
+    name: "리산드라",
     tags: ["Mage"],
   },
   {
@@ -296,7 +296,7 @@ const allChamps = [
     tags: ["Mage", "Support"],
   },
   {
-    name: "말파",
+    name: "말파이트",
     tags: ["Tank", "Fighter"],
   },
   {
@@ -308,7 +308,7 @@ const allChamps = [
     tags: ["Tank", "Mage"],
   },
   {
-    name: "마이",
+    name: "마스터이",
     tags: ["Assassin", "Fighter"],
   },
   {
@@ -344,7 +344,7 @@ const allChamps = [
     tags: ["Fighter", "Tank"],
   },
   {
-    name: "노틸",
+    name: "노틸러스",
     tags: ["Tank", "Support"],
   },
   {
@@ -380,7 +380,7 @@ const allChamps = [
     tags: ["Tank", "Fighter"],
   },
   {
-    name: "판테",
+    name: "판테온",
     tags: ["Fighter", "Assassin"],
   },
   {
@@ -500,7 +500,7 @@ const allChamps = [
     tags: ["Mage", "Fighter"],
   },
   {
-    name: "사일",
+    name: "사일러스",
     tags: ["Mage", "Assassin"],
   },
   {
@@ -596,7 +596,7 @@ const allChamps = [
     tags: ["Mage"],
   },
   {
-    name: "볼베",
+    name: "볼리베어",
     tags: ["Fighter", "Tank"],
   },
   {
