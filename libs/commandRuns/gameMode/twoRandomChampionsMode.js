@@ -15,21 +15,21 @@ export default async function twoRandomChampionsMode(interaction) {
     const unbannedChampions = await getUnbannedChampions(clan_id);
     const suffledChampions = unbannedChampions.sort(() => Math.random() - 0.5);
 
-    const firstTeamStaticChapion = suffledChampions
+    const firstTeamStaticChapions = suffledChampions
       .slice(0, 2)
-      .map(({ name }, index) => `${index}. ${name}`)
+      .map(({ name }, index) => `${index + 1}. ${name}`)
       .join("\n");
 
-    const secondTeamStaticChapion = suffledChampions
+    const secondTeamStaticChapions = suffledChampions
       .slice(2, 4)
-      .map(({ name }, index) => `${index}. ${name}`)
+      .map(({ name }, index) => `${index + 1}. ${name}`)
       .join("\n");
 
     await interaction.reply(
       `
       💚 각 팀별 고정 챔피언 목록이에요!\n
-      💙 1팀\n${firstTeamStaticChapion}\n
-      💛 2팀\n${secondTeamStaticChapion}
+      💙 1팀\n${firstTeamStaticChapions}\n
+      💛 2팀\n${secondTeamStaticChapions}
       `
     );
   } catch (error) {

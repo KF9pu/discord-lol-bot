@@ -1,19 +1,30 @@
-import { PrismaClient } from "@prisma/client";
 import { CommandInteraction } from "discord.js";
-
+import {
+  startConsole,
+  catchConsole,
+  getUnbannedChampions,
+} from "../../index.js";
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function mirrorMode(interaction) {
-  const prisma = new PrismaClient();
-
   try {
-    console.log("🚀🚀🚀🚀 mirrorMode start 🚀🚀🚀🚀");
-    await interaction.reply("mirrorMode");
+    startConsole("mirrorMode");
+    const clan_id = parseInt(interaction.guildId);
+    const unbannedChampions = await getUnbannedChampions(clan_id);
+    const suffledChampions = unbannedChampions.sort(() => Math.random() - 0.5);
+
+    const resultChapions = suffledChampions
+      .slice(0, 20)
+      .map(({ name }, index) => `💙 ${index + 1}. ${name}`)
+      .join("\n");
+    await interaction.reply(
+      `
+        💚 공통 챔피언 목록이에요!
+        \n${resultChapions}
+        `
+    );
   } catch (error) {
-    console.log("❌ mirrorMode catch ❌", error);
-    interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");
-  } finally {
-    await prisma.$disconnect();
+    catchConsole("mirrorMode", interaction, error);
   }
 }
