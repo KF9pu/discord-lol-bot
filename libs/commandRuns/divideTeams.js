@@ -45,7 +45,7 @@ export default async function divideTeams(interaction) {
 
           await interaction.reply(
             "\n┌" +
-              `\n│💚 참여인원 : ${shuffledPlayerNames.length}` +
+              `\n│💚 게임참여인원 : ${shuffledPlayerNames.length}` +
               "\n└" +
               "\n┌" +
               "\n│💙 1팀" +

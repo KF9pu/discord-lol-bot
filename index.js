@@ -22,7 +22,7 @@ client.on("messageCreate", async msg => {
 
   for (const keyword of keywordsToCheck) {
     if (msg.content.includes(keyword)) {
-      const replyMessage = await handleKeyword(msg, keyword);
+      const replyMessage = handleKeyword(msg, keyword);
       if (replyMessage) msg.reply(replyMessage);
       break; // 한 번이라도 키워드가 일치하면 루프 종료
     }

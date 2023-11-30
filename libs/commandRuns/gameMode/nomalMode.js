@@ -1,4 +1,3 @@
-import { PrismaClient } from "@prisma/client";
 import { CommandInteraction } from "discord.js";
 import getChampionsByPosition from "../../common/util/getChampionsByPosition.js";
 import getRemainingChampions from "../../common/util/getRemainingChampions.js";
@@ -7,8 +6,6 @@ import getRemainingChampions from "../../common/util/getRemainingChampions.js";
  * @param {CommandInteraction} interaction
  */
 export default async function nomalMode(interaction) {
-  const prisma = new PrismaClient();
-
   try {
     console.log("🚀🚀🚀🚀 nomalMode start 🚀🚀🚀🚀");
     const staticTypes = ["Tank", "Support", "Marksman"]; // 최소한 원딜/탱커/서폿이 나올 수 있도록 지정 포시션
@@ -63,7 +60,5 @@ export default async function nomalMode(interaction) {
   } catch (error) {
     console.log("❌ nomalMode catch ❌", error);
     interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");
-  } finally {
-    await prisma.$disconnect();
   }
 }
