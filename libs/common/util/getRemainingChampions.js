@@ -1,5 +1,8 @@
-export default function getRemainingChampions(staticChampionList, champions) {
+export default function getRemainingChampions(
+  excludedChampionNames,
+  champions
+) {
   return champions
-    .filter(champ => !staticChampionList.includes(champ))
+    .filter(({ name }) => !excludedChampionNames.includes(name))
     .sort(() => Math.random() - 0.5);
 }

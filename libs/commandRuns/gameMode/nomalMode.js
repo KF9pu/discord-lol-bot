@@ -37,7 +37,10 @@ export default async function nomalMode(interaction) {
     ];
 
     const remainingChampions = getRemainingChampions(
-      [...firstTeamStaticChampions, ...secondTeamStaticChampions],
+      [
+        ...firstTeamStaticChampions.map(({ name }) => name),
+        ...secondTeamStaticChampions.map(({ name }) => name),
+      ],
       unbannedChampions
     );
 
