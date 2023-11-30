@@ -18,3 +18,6 @@ export { default as catchConsole } from "./common/consoles/catchConsole.js";
 export { default as startConsole } from "./common/consoles/startConsole.js";
 export { default as handleKeyword } from "./common/handlers/handleKeyword.js";
 export { default as setCommandLog } from "./common/setLogs/setCommandLog.js";
+export { default as getChampionsByPosition } from "./common/util/getChampionsByPosition.js";
+export { default as getRemainingChampions } from "./common/util/getRemainingChampions.js";
+export { default as getUnbannedChampions } from "./common/util/getUnbannedChampions.js";
