@@ -15,7 +15,9 @@ export default async function nomalMode(interaction) {
     startConsole("nomalMode");
     const staticTypes = ["Tank", "Support", "Marksman"]; // 최소한 원딜/탱커/서폿이 나올 수 있도록 지정 포시션
 
-    const unbannedChampions = await getUnbannedChampions();
+    const clan_id = parseInt(interaction.guildId);
+
+    const unbannedChampions = await getUnbannedChampions(clan_id);
 
     const championsByPosition = getChampionsByPosition(
       staticTypes,

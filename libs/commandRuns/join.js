@@ -12,10 +12,6 @@ export default async function join(interaction) {
   try {
     startConsole("join");
     const user_id = parseInt(interaction.user.id);
-    console.log(
-      "🚀 ~ file: join.js:15 ~ join ~ interaction.user:",
-      interaction.user
-    );
     const clan_id = parseInt(interaction.guildId);
     const user_nickname =
       interaction.user.globalName ?? interaction.user.username;

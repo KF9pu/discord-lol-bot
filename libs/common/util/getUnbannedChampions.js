@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import allChamps from "../../../constants/allChamps.js";
 
-export default async function getUnbannedChampions() {
+export default async function getUnbannedChampions(clan_id) {
   const prisma = new PrismaClient();
 
   try {
@@ -14,7 +14,9 @@ export default async function getUnbannedChampions() {
       },
     });
 
-    return allChamps.filter(champion => banList.includes(champion));
+    const banListNames = banList.map(({ champion_name }) => champion_name);
+
+    return allChamps.filter(({ name }) => !banListNames.includes(name));
   } catch (error) {
     console.log("💔💔💔💔 [getUnbannedChampions] error 💔💔💔💔");
     return [];

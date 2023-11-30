@@ -11,7 +11,8 @@ import {
 export default async function twoRandomChampionsMode(interaction) {
   try {
     startConsole("twoRandomChampionsMode");
-    const unbannedChampions = await getUnbannedChampions();
+    const clan_id = parseInt(interaction.guildId);
+    const unbannedChampions = await getUnbannedChampions(clan_id);
 
     await interaction.reply("twoRandomChampionsMode");
   } catch (error) {
