@@ -19,7 +19,8 @@ export default async function mirrorMode(interaction) {
       .map(({ name }, index) => `💙 ${index + 1}. ${name}`)
       .join("\n");
     await interaction.reply(
-      `
+      "[🤎 미러모드]" +
+        `
         💚 공통 챔피언 목록이에요!
         \n${resultChapions}
         `

@@ -38,7 +38,8 @@ export default async function halfMirrorMode(interaction) {
       .join("\n├");
 
     await interaction.reply(
-      "\n┌" +
+      "[🤎 하프미러모드]" +
+        "\n┌" +
         `\n│[💚 공통 챔피언]` +
         `\n├${resultCommonChapions}` +
         "\n└" +

@@ -21,3 +21,4 @@ export { default as setCommandLog } from "./common/setLogs/setCommandLog.js";
 export { default as getChampionsByPosition } from "./common/util/getChampionsByPosition.js";
 export { default as getRemainingChampions } from "./common/util/getRemainingChampions.js";
 export { default as getUnbannedChampions } from "./common/util/getUnbannedChampions.js";
+export { default as suffledArray } from "./common/util/suffledArray.js";

@@ -1,12 +1,13 @@
 import { CommandInteraction } from "discord.js";
 import { ARAM } from "../../../constants/spells.js";
+import { catchConsole, startConsole } from "../../index.js";
 
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function randomSpellMode(interaction) {
   try {
-    console.log("🚀🚀🚀🚀 randomSpellMode start 🚀🚀🚀🚀");
+    startConsole("randomSpellMode");
     const firstTeamSpellPairs = getRandomSpell(ARAM, 5)
       .map(
         (firstTeamSpellPair, index) =>
@@ -21,14 +22,14 @@ export default async function randomSpellMode(interaction) {
       )
       .join("\n");
     await interaction.reply(
-      `
+      "[🤎 랜덤스펠모드]" +
+        `
       💙 1팀 스펠\n${firstTeamSpellPairs}
       \n💛 2팀 스펠\n${secondTeamSpellsPairs}
       `
     );
   } catch (error) {
-    console.log("❌ randomSpellMode catch ❌", error);
-    interaction.reply("🖤 문제가 발생했군요! - 관리자에게 문의하세요");
+    catchConsole("randomSpellMode", interaction, error);
   }
 }
 

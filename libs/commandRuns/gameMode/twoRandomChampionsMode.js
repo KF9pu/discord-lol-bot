@@ -26,11 +26,9 @@ export default async function twoRandomChampionsMode(interaction) {
       .join("\n");
 
     await interaction.reply(
-      `
-      💚 각 팀별 고정 챔피언 목록이에요!\n
-      💙 1팀\n${firstTeamStaticChapions}\n
-      💛 2팀\n${secondTeamStaticChapions}
-      `
+      "[🤎 2랜모드] 각 팀별 고정 챔피언 목록" +
+        `\n💙 1팀\n${firstTeamStaticChapions}` +
+        `\n💛 2팀\n${secondTeamStaticChapions}`
     );
   } catch (error) {
     catchConsole("twoRandomChampionsMode", interaction, error);

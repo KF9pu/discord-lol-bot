@@ -59,7 +59,8 @@ export default async function nomalMode(interaction) {
       .join("\n");
 
     await interaction.reply(
-      `
+      "[🤎 기본모드]" +
+        `
       💚 각 팀별 챔피언 목록이에요!\n
       💙 1팀\n${firstTeamResultChampions}\n
       💛 2팀\n${secondTeamResultChampions}
