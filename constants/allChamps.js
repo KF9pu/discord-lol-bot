@@ -124,7 +124,7 @@ const allChamps = [
     tags: ["Marksman", "Mage"],
   },
   {
-    name: "피들",
+    name: "피들스틱",
     tags: ["Mage", "Support"],
   },
   {

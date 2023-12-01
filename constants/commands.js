@@ -19,6 +19,7 @@ import {
   secondTeamWin,
   getMyRecord,
   getAllRecord,
+  princeMode,
 } from "../libs/index.js";
 
 const commands = [
@@ -37,43 +38,7 @@ const commands = [
     description: "💚 현재 사용이 가능한 모든 모드 목록 보기",
     run: showAllModes,
   },
-  {
-    name: "랜덤모드",
-    description: "💚 사용가능한 모든 모드 중에서 하나 뽑기",
-    run: pickRandomMode,
-    gameMode: true,
-  },
-  {
-    name: "2랜모드",
-    description: "💚 랜덤으로 선택된 2개의 챔피언을 포함하여 조합을 짜는 모드",
-    run: twoRandomChampionsMode,
-    gameMode: true,
-  },
-  {
-    name: "기본모드",
-    description: "💚 각 팀별로 15개의 주어진 챔피언 리스트로 조합을 짜는 모드",
-    run: nomalMode,
-    gameMode: true,
-  },
-  {
-    name: "미러모드",
-    description: "💚 20개의 공통된 챔피언 리스트로 양팀 모두 조합을 짜는 모드",
-    run: mirrorMode,
-    gameMode: true,
-  },
-  {
-    name: "하프미러모드",
-    description:
-      "💚 양 팀 모두 사용가능한 10개의 챔피언 리스트와 각 팀만 사용하능한 10개의 챔피언 리스트로 조합을 짜는 모드",
-    run: halfMirrorMode,
-    gameMode: true,
-  },
-  {
-    name: "랜덤스펠모드",
-    description: "💚 각 팀은 주어진 스펠을 순서에 맞게 선택한 뒤 전투하는 모드",
-    run: randomSpellMode,
-    gameMode: true,
-  },
+
   {
     name: "조인",
     description: "💚 게임 플레이 참여",
@@ -129,6 +94,49 @@ const commands = [
     name: "전체전적",
     description: "💚 전체 전적 보기!",
     run: getAllRecord,
+  },
+  {
+    name: "랜덤모드",
+    description: "💚 사용가능한 모든 모드 중에서 하나 뽑기",
+    run: pickRandomMode,
+    gameMode: true,
+  },
+  {
+    name: "2랜모드",
+    description: "💚 랜덤으로 선택된 2개의 챔피언을 포함하여 조합을 짜는 모드",
+    run: twoRandomChampionsMode,
+    gameMode: true,
+  },
+  {
+    name: "기본모드",
+    description: "💚 각 팀별로 15개의 주어진 챔피언 리스트로 조합을 짜는 모드",
+    run: nomalMode,
+    gameMode: true,
+  },
+  {
+    name: "미러모드",
+    description: "💚 20개의 공통된 챔피언 리스트로 양팀 모두 조합을 짜는 모드",
+    run: mirrorMode,
+    gameMode: true,
+  },
+  {
+    name: "하프미러모드",
+    description:
+      "💚 양 팀 모두 사용가능한 10개의 챔피언 리스트와 각 팀만 사용하능한 10개의 챔피언 리스트로 조합을 짜는 모드",
+    run: halfMirrorMode,
+    gameMode: true,
+  },
+  {
+    name: "랜덤스펠모드",
+    description: "💚 각 팀은 주어진 스펠을 순서에 맞게 선택한 뒤 전투하는 모드",
+    run: randomSpellMode,
+    gameMode: true,
+  },
+  {
+    name: "왕자님모드",
+    description: "💚 왕자님과 서폿들 로 전투하세요!",
+    run: princeMode,
+    gameMode: true,
   },
 ];
 
