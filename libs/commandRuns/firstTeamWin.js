@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { catchConsole, startConsole } from "../index.js";
+import { catchConsole, setCommandLog, startConsole } from "../index.js";
 import { unixNow, unixTodayStart, unixTomorrowStart } from "hsh-utils-date";
 
 /**
