@@ -43,6 +43,32 @@ export default async function divideTeams(interaction) {
             shuffledPlayerNames.slice(halfLength)
           );
 
+          await prisma.player.updateMany({
+            where: {
+              user_name: {
+                in: shuffledPlayerNames,
+              },
+            },
+            data: {
+              team: {
+                set: 1,
+              },
+            },
+          });
+
+          await prisma.player.updateMany({
+            where: {
+              user_name: {
+                in: shuffledPlayerNames.slice(halfLength),
+              },
+            },
+            data: {
+              team: {
+                set: 2,
+              },
+            },
+          });
+
           await interaction.reply(
             "\n┌" +
               `\n│💚 게임참여인원 : ${shuffledPlayerNames.length}` +
