@@ -24,11 +24,6 @@ import {
 
 const commands = [
   {
-    name: "레디",
-    description: "💚 음성채널에 있는 모든 사람들을 첫 번째 채널로 이동",
-    run: ready,
-  },
-  {
     name: "팀짜",
     description: "💚 플레이어들을 두 팀으로 나누어 준다.",
     run: divideTeams,

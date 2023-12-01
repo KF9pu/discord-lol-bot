@@ -6,5 +6,5 @@
 
 ### 정보 보기
 
-- 노션링크 : https://www.notion.so/e6258502186f4609ac6a225e35545c80?pvs=4
+- 노션링크 : https://dandelion-echidna-7a3.notion.site/ca0001fb770c4df1b16501850cc260af?pvs=4
 - 디코링크 : https://discord.gg/nkMWw8p9
