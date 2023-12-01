@@ -17,6 +17,7 @@ import {
   resetBanList,
   firstTeamWin,
   secondTeamWin,
+  getMyRecord,
 } from "../libs/index.js";
 
 const commands = [
@@ -117,6 +118,11 @@ const commands = [
     name: "2팀승",
     description: "💚 2팀으로 포함된 사람들의 승리 입력!",
     run: secondTeamWin,
+  },
+  {
+    name: "내전적",
+    description: "💚 내 전적 보기!",
+    run: getMyRecord,
   },
 ];
 
