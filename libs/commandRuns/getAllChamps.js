@@ -15,7 +15,7 @@ export default async function getAllChamps(interaction) {
       "🚀 ~ file: getAllChamps.js:15 ~ getAllChamps ~ allChampNames:",
       allChampNames
     );
-    interaction.reply(`💚 챔피언 목록\n${allChampNames.join("\n")}`);
+    await interaction.reply(`💚 챔피언 목록\n${allChampNames.join("\n")}`);
   } catch (error) {
     catchConsole("getAllChamps", interaction, error);
   }

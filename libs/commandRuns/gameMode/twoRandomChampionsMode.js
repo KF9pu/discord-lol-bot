@@ -3,14 +3,19 @@ import {
   catchConsole,
   startConsole,
   getUnbannedChampions,
+  setCommandLog,
 } from "../../index.js";
+import { PrismaClient } from "@prisma/client";
 
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function twoRandomChampionsMode(interaction) {
+  const prisma = new PrismaClient();
   try {
     startConsole("twoRandomChampionsMode");
+
+    const user_id = parseInt(interaction.user.id);
     const clan_id = parseInt(interaction.guildId);
     const unbannedChampions = await getUnbannedChampions(clan_id);
     const suffledChampions = unbannedChampions.sort(() => Math.random() - 0.5);
@@ -30,7 +35,11 @@ export default async function twoRandomChampionsMode(interaction) {
         `\n💙 1팀\n${firstTeamStaticChapions}` +
         `\n💛 2팀\n${secondTeamStaticChapions}`
     );
+
+    await setCommandLog(prisma, user_id, clan_id, "twoRandomChampionsMode");
   } catch (error) {
     catchConsole("twoRandomChampionsMode", interaction, error);
+  } finally {
+    await prisma.$disconnect();
   }
 }

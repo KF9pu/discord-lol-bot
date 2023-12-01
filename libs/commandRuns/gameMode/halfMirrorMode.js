@@ -4,15 +4,22 @@ import {
   catchConsole,
   getUnbannedChampions,
   getRemainingChampions,
+  setCommandLog,
 } from "../../index.js";
+import { PrismaClient } from "@prisma/client";
 
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function halfMirrorMode(interaction) {
+  const prisma = new PrismaClient();
+
   try {
     startConsole("mirrorMode");
+
+    const user_id = parseInt(interaction.user.id);
     const clan_id = parseInt(interaction.guildId);
+
     const unbannedChampions = await getUnbannedChampions(clan_id);
     const suffledChampions = unbannedChampions.sort(() => Math.random() - 0.5);
 
@@ -52,6 +59,8 @@ export default async function halfMirrorMode(interaction) {
         `\n├${resultSecondTeamChampions}` +
         "\n└"
     );
+
+    await setCommandLog(prisma, user_id, clan_id, "nomalMode");
   } catch (error) {
     catchConsole("mirrorMode", interaction, error);
   }

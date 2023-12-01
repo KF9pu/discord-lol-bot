@@ -3,14 +3,20 @@ import {
   startConsole,
   catchConsole,
   getUnbannedChampions,
+  setCommandLog,
 } from "../../index.js";
+import { PrismaClient } from "@prisma/client";
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function mirrorMode(interaction) {
+  const prisma = new PrismaClient();
   try {
     startConsole("mirrorMode");
+
+    const user_id = parseInt(interaction.user.id);
     const clan_id = parseInt(interaction.guildId);
+
     const unbannedChampions = await getUnbannedChampions(clan_id);
     const suffledChampions = unbannedChampions.sort(() => Math.random() - 0.5);
 
@@ -25,7 +31,11 @@ export default async function mirrorMode(interaction) {
         \n${resultChapions}
         `
     );
+
+    await setCommandLog(prisma, user_id, clan_id, "mirrorMode");
   } catch (error) {
     catchConsole("mirrorMode", interaction, error);
+  } finally {
+    await prisma.$disconnect();
   }
 }

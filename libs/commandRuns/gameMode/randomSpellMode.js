@@ -1,13 +1,20 @@
 import { CommandInteraction } from "discord.js";
 import { ARAM } from "../../../constants/spells.js";
-import { catchConsole, startConsole } from "../../index.js";
+import { catchConsole, setCommandLog, startConsole } from "../../index.js";
+import { PrismaClient } from "@prisma/client";
 
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function randomSpellMode(interaction) {
+  const prisma = new PrismaClient();
+
   try {
     startConsole("randomSpellMode");
+
+    const user_id = parseInt(interaction.user.id);
+    const clan_id = parseInt(interaction.guildId);
+
     const firstTeamSpellPairs = getRandomSpell(ARAM, 5)
       .map(
         (firstTeamSpellPair, index) =>
@@ -21,6 +28,7 @@ export default async function randomSpellMode(interaction) {
           `${index}. [${secondTeamSpellPair[0]}, ${secondTeamSpellPair[1]}]`
       )
       .join("\n");
+
     await interaction.reply(
       "[🤎 랜덤스펠모드]" +
         `
@@ -28,8 +36,11 @@ export default async function randomSpellMode(interaction) {
       \n💛 2팀 스펠\n${secondTeamSpellsPairs}
       `
     );
+    await setCommandLog(prisma, user_id, clan_id, "randomSpellMode");
   } catch (error) {
     catchConsole("randomSpellMode", interaction, error);
+  } finally {
+    await prisma.$disconnect();
   }
 }
 

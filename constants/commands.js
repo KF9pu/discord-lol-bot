@@ -15,6 +15,8 @@ import {
   getAllChamps,
   getBanList,
   resetBanList,
+  firstTeamWin,
+  secondTeamWin,
 } from "../libs/index.js";
 
 const commands = [
@@ -105,6 +107,16 @@ const commands = [
     name: "밴초기화",
     description: "💚 글로벌 밴으로 추가된 챔피언 리스트 초기화",
     run: resetBanList,
+  },
+  {
+    name: "1팀승",
+    description: "💚 1팀으로 포함된 사람들의 승리 입력!",
+    run: firstTeamWin,
+  },
+  {
+    name: "2팀승",
+    description: "💚 2팀으로 포함된 사람들의 승리 입력!",
+    run: secondTeamWin,
   },
 ];
 

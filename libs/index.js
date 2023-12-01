@@ -14,6 +14,8 @@ export { default as resetPlayer } from "./commandRuns/resetPlayer.js";
 export { default as getAllChamps } from "./commandRuns/getAllChamps.js";
 export { default as getBanList } from "./commandRuns/getBanList.js";
 export { default as resetBanList } from "./commandRuns/resetBanList.js";
+export { default as firstTeamWin } from "./commandRuns/firstTeamWin.js";
+export { default as secondTeamWin } from "./commandRuns/secondTeamWin.js";
 export { default as catchConsole } from "./common/consoles/catchConsole.js";
 export { default as startConsole } from "./common/consoles/startConsole.js";
 export { default as handleKeyword } from "./common/handlers/handleKeyword.js";

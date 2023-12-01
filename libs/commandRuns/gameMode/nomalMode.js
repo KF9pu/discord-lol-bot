@@ -5,16 +5,20 @@ import {
   getChampionsByPosition,
   getRemainingChampions,
   getUnbannedChampions,
+  setCommandLog,
 } from "../../index.js";
+import { PrismaClient } from "@prisma/client";
 
 /**
  * @param {CommandInteraction} interaction
  */
 export default async function nomalMode(interaction) {
+  const prisma = new PrismaClient();
   try {
     startConsole("nomalMode");
     const staticTypes = ["Tank", "Support", "Marksman"]; // 최소한 원딜/탱커/서폿이 나올 수 있도록 지정 포시션
 
+    const user_id = parseInt(interaction.user.id);
     const clan_id = parseInt(interaction.guildId);
 
     const unbannedChampions = await getUnbannedChampions(clan_id);
@@ -66,7 +70,11 @@ export default async function nomalMode(interaction) {
       💛 2팀\n${secondTeamResultChampions}
       `
     );
+
+    await setCommandLog(prisma, user_id, clan_id, "nomalMode");
   } catch (error) {
     catchConsole("nomalMode", interaction, error);
+  } finally {
+    await prisma.$disconnect();
   }
 }
