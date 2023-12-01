@@ -31,10 +31,10 @@ export default async function randomSpellMode(interaction) {
 
     await interaction.reply(
       "[🤎 랜덤스펠모드]" +
-        `
-      💙 1팀 스펠\n${firstTeamSpellPairs}
-      \n💛 2팀 스펠\n${secondTeamSpellsPairs}
-      `
+        "\n[💛 모드 설명 : 주어진 스펠쌍을 들고 조합을 짜는 모드]" +
+        "\n[🔶 만든이 : 정화와 총명은 다른 스펠보다 나올 확률이 60% 적습니다.]\n" +
+        `\n💙 1팀 스펠\n${firstTeamSpellPairs}` +
+        `\n💛 2팀 스펠\n${secondTeamSpellsPairs}`
     );
     await setCommandLog(prisma, user_id, clan_id, "randomSpellMode");
   } catch (error) {
@@ -45,13 +45,10 @@ export default async function randomSpellMode(interaction) {
 }
 
 function getRandomSpell(spells, count) {
-  const shuffledSpells = [
-    ...spells,
-    ...spells,
-    ...spells,
-    ...spells,
-    ...spells,
-  ];
+  const excludeSpells = ["총명", "정화"];
+  const shuffledSpells = Array.from({ length: 3 }, (_, index) =>
+    index > 1 ? spells : spells.filter(spell => !excludeSpells.includes(spell))
+  ).flat();
 
   for (let i = shuffledSpells.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

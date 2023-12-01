@@ -40,7 +40,8 @@ export default async function princeMode(interaction) {
       .join("\n");
 
     await interaction.reply(
-      "[🤎 왕자님 모드]\n" +
+      "[🤎 왕자님 모드]" +
+        "\n[💛 모드 설명 : 왕자님에서 1개 서폿들에서 나머지를 선택하여 조합을 짜는 모드]\n" +
         `\n💚 왕자님` +
         "\n┌" +
         `\n${pickedPrinceChampions}` +

@@ -64,11 +64,10 @@ export default async function nomalMode(interaction) {
 
     await interaction.reply(
       "[🤎 기본모드]" +
-        `
-      💚 각 팀별 챔피언 목록이에요!\n
-      💙 1팀\n${firstTeamResultChampions}\n
-      💛 2팀\n${secondTeamResultChampions}
-      `
+        "\n[💛 모드 설명 : 각팀에게 주어진 챔피언들로 조합을 짜는 모드]\n" +
+        `\n💚 각 팀별 챔피언 목록이에요!\n` +
+        `\n💙 1팀\n${firstTeamResultChampions}` +
+        `\n💛 2팀\n${secondTeamResultChampions}`
     );
 
     await setCommandLog(prisma, user_id, clan_id, "nomalMode");

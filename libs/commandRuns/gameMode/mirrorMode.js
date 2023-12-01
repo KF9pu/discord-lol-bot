@@ -26,10 +26,9 @@ export default async function mirrorMode(interaction) {
       .join("\n");
     await interaction.reply(
       "[🤎 미러모드]" +
-        `
-        💚 공통 챔피언 목록이에요!
-        \n${resultChapions}
-        `
+        "\n[💛 모드 설명 : 양팀 모두 같은 챔피언들로 조합을 짜는 모드]\n" +
+        `\n💚 공통 챔피언 목록이에요!\n` +
+        `\n${resultChapions}`
     );
 
     await setCommandLog(prisma, user_id, clan_id, "mirrorMode");

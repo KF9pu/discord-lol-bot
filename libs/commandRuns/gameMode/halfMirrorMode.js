@@ -46,18 +46,19 @@ export default async function halfMirrorMode(interaction) {
 
     await interaction.reply(
       "[🤎 하프미러모드]" +
+        "\n[💛 모드 설명 : 공통 챔피언과 각팀 챔피언들로 조합을 짜는 모드]\n" +
         "\n┌" +
         `\n│[💚 공통 챔피언]` +
         `\n├${resultCommonChapions}` +
-        "\n└" +
+        "\n└\n" +
         "\n┌" +
         "\n│[💙 1팀]" +
         `\n├${resultFirstTeamChampions}` +
-        "\n└" +
+        "\n└\n" +
         "\n┌" +
         "\n│[💛 2팀]" +
         `\n├${resultSecondTeamChampions}` +
-        "\n└"
+        "\n└\n"
     );
 
     await setCommandLog(prisma, user_id, clan_id, "nomalMode");
