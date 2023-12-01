@@ -18,6 +18,7 @@ import {
   firstTeamWin,
   secondTeamWin,
   getMyRecord,
+  getAllRecord,
 } from "../libs/index.js";
 
 const commands = [
@@ -123,6 +124,11 @@ const commands = [
     name: "내전적",
     description: "💚 내 전적 보기!",
     run: getMyRecord,
+  },
+  {
+    name: "전체전적",
+    description: "💚 전체 전적 보기!",
+    run: getAllRecord,
   },
 ];
 
