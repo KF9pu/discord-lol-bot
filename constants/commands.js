@@ -1,5 +1,4 @@
 import {
-  ready,
   divideTeams,
   halfMirrorMode,
   join,

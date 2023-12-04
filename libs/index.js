@@ -1,4 +1,3 @@
-export { default as ready } from "./commandRuns/ready.js";
 export { default as divideTeams } from "./commandRuns/divideTeams.js";
 export { default as pickRandomMode } from "./commandRuns/gameMode/pickRandomMode.js";
 export { default as join } from "./commandRuns/join.js";
