@@ -9,6 +9,7 @@ export { default as showAllModes } from "./commandRuns/showAllModes.js";
 export { default as randomSpellMode } from "./commandRuns/gameMode/randomSpellMode.js";
 export { default as twoRandomChampionsMode } from "./commandRuns/gameMode/twoRandomChampionsMode.js";
 export { default as princeMode } from "./commandRuns/gameMode/princeMode.js";
+export { default as fightersMode } from "./commandRuns/gameMode/fightersMode.js";
 export { default as getClanInfo } from "./commandRuns/getClanInfo.js";
 export { default as resetPlayer } from "./commandRuns/resetPlayer.js";
 export { default as getAllChamps } from "./commandRuns/getAllChamps.js";

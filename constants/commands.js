@@ -19,6 +19,7 @@ import {
   getMyRecord,
   getAllRecord,
   princeMode,
+  fightersMode,
 } from "../libs/index.js";
 
 const commands = [
@@ -130,6 +131,12 @@ const commands = [
     name: "왕자님모드",
     description: "💚 왕자님과 서폿들 로 전투하세요!",
     run: princeMode,
+    gameMode: true,
+  },
+  {
+    name: "땀내모드",
+    description: "💚 탱커와 파이터로 조합을 완성하세요!",
+    run: fightersMode,
     gameMode: true,
   },
 ];
