@@ -372,7 +372,7 @@ const allChamps = [
     tags: ["Fighter", "Tank"],
   },
   {
-    name: "오리",
+    name: "오리아나",
     tags: ["Mage", "Support"],
   },
   {
@@ -657,6 +657,10 @@ const allChamps = [
   },
   {
     name: "자이라",
+    tags: ["Mage", "Support"],
+  },
+  {
+    name: "흐웨이",
     tags: ["Mage", "Support"],
   },
 ];
