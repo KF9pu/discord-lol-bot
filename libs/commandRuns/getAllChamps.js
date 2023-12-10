@@ -11,10 +11,10 @@ export default async function getAllChamps(interaction) {
     const allChampNames = allChamps.map(
       ({ name }, index) => `${index + 1}. ${name}`
     );
-    console.log(
-      "🚀 ~ file: getAllChamps.js:15 ~ getAllChamps ~ allChampNames:",
-      allChampNames
-    );
+    // console.log(
+    //   "🚀 ~ file: getAllChamps.js:15 ~ getAllChamps ~ allChampNames:",
+    //   allChampNames
+    // );
     await interaction.reply(`💚 챔피언 목록\n${allChampNames.join("\n")}`);
   } catch (error) {
     catchConsole("getAllChamps", interaction, error);

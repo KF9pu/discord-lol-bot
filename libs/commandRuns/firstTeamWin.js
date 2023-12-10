@@ -23,10 +23,10 @@ export default async function firstTeamWin(interaction) {
       },
     });
 
-    console.log(
-      "🚀 ~ file: firstTeamWin.js:41 ~ firstTeamWin ~ players:",
-      players
-    );
+    // console.log(
+    //   "🚀 ~ file: firstTeamWin.js:41 ~ firstTeamWin ~ players:",
+    //   players
+    // );
 
     const firstTeamLength = players.filter(({ team }) => team === 1).length;
 

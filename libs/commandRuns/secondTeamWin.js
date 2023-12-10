@@ -22,10 +22,10 @@ export default async function secondTeamWin(interaction) {
         },
       },
     });
-    console.log(
-      "🚀 ~ file: secondTeamWin.js:24 ~ secondTeamWin ~ players:",
-      players
-    );
+    // console.log(
+    //   "🚀 ~ file: secondTeamWin.js:24 ~ secondTeamWin ~ players:",
+    //   players
+    // );
 
     const secondTeamLength = players.filter(({ team }) => team === 2).length;
 
