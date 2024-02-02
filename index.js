@@ -41,4 +41,6 @@ client.on("interactionCreate", async interaction => {
   }
 });
 
+console.log("🚀 ~ process.env.TOKEN:", process.env.TOKEN);
+
 client.login(process.env.TOKEN);
